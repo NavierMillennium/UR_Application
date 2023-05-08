@@ -32,7 +32,7 @@ The application contains a communication module dedicated to UR robots (especial
 ![Image catcher](https://github.com/NavierMillennium/UR_Application/blob/master/screenshots/catch_frame.png?raw=true)
 
 * **Real robot UR5 CB2**:
-https://user-images.githubusercontent.com/120511384/236848852-d4daae87-06fe-45f6-99ee-13ba99897823.mp4
+https://user-images.githubusercontent.com/120511384/236850290-c5bf121d-2248-4c86-b6ac-8847bf14dcad.mp4
 
 ## Links
 * [OpenCV-Python Tutorials][1]
