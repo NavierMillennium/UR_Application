@@ -4,6 +4,7 @@ import numpy as np
 from PyQt5.QtCore import QMutex, QObject, QThread, pyqtSignal as Signal, pyqtSlot as Slot ,Qt
 import os  
 import json
+import glob
 class Camera():
 
     def __init__(self,imgSrc):
@@ -114,9 +115,9 @@ class Camera():
     
     def criteria_SubPix(self,MAX_COUNT:int,EPSILON:float)->None:
         
-        if 20 < MAX_COUNT and 20 < MAX_COUNT
-        self.MAX_COUNT = MAX_COUNT
-        self.EPSILON = EPSILON
+        if 20 < MAX_COUNT and 20 < MAX_COUNT:
+            self.MAX_COUNT = MAX_COUNT
+            self.EPSILON = EPSILON
         
          
     def calib_camera(self):

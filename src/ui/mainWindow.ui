@@ -1721,7 +1721,7 @@ border: 1px solid #b8bcc7;</string>
             <item>
              <widget class="QStackedWidget" name="stackedWidget_2">
               <property name="currentIndex">
-               <number>1</number>
+               <number>0</number>
               </property>
               <widget class="QWidget" name="initPage">
                <layout class="QGridLayout" name="gridLayout_23">
@@ -1755,11 +1755,18 @@ border: 1px solid #b8bcc7;</string>
                   </item>
                   <item>
                    <widget class="QFrame" name="frame_6">
+                    <property name="styleSheet">
+                     <string notr="true">#frame_6 {
+    border:1px solid #b78da0a0;
+    border-radius:5px;
+}
+</string>
+                    </property>
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
                     </property>
                     <property name="frameShadow">
-                     <enum>QFrame::Plain</enum>
+                     <enum>QFrame::Sunken</enum>
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_21">
                      <item>
@@ -2410,325 +2417,315 @@ camera configuration</string>
                    </layout>
                   </widget>
                   <widget class="QWidget" name="gridCalib">
-                   <widget class="QFrame" name="cornerNumber">
-                    <property name="geometry">
-                     <rect>
-                      <x>250</x>
-                      <y>380</y>
-                      <width>111</width>
-                      <height>21</height>
-                     </rect>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">#cornerNumber {
+                   <layout class="QGridLayout" name="gridLayout_10">
+                    <item row="0" column="0">
+                     <layout class="QGridLayout" name="gridLayout_9">
+                      <item row="4" column="1">
+                       <widget class="QPushButton" name="btnLiveImg_2">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>Live</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="0" colspan="2">
+                       <widget class="QLabel" name="lableInfoSteps_2">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="text">
+                         <string>Information about this step --&gt;Grrid calibration</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="1" colspan="2">
+                       <widget class="QLabel" name="label_29">
+                        <property name="text">
+                         <string>Project hierarchy</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="1" colspan="2">
+                       <widget class="QTreeView" name="treeViewClibDir"/>
+                      </item>
+                      <item row="4" column="0" rowspan="5">
+                       <widget class="QLabel" name="inputImg_4">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="text">
+                         <string>Saved image</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="8" column="1" colspan="2">
+                       <widget class="QFrame" name="cornerNumber">
+                        <property name="styleSheet">
+                         <string notr="true">#cornerNumber {
     border:1px solid #b78da0a0;
     border-radius:1px;
 }
-QLineEdit {
-    border:none;
-    background-color: transparent;
+QSpinBox {
+ 	border:1px solid #b78da0a0;
+   
 }
  QLabel {
     background-color:#ffffffff;
 }
 </string>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_6">
-                     <property name="leftMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="topMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="rightMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                     <item>
-                      <layout class="QHBoxLayout" name="horizontalLayout_5">
-                       <property name="spacing">
-                        <number>0</number>
-                       </property>
-                       <item>
-                        <widget class="QSpinBox" name="spinBox_2"/>
-                       </item>
-                       <item>
-                        <widget class="QLabel" name="label_56">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_8">
+                         <property name="leftMargin">
+                          <number>3</number>
                          </property>
-                         <property name="minimumSize">
-                          <size>
-                           <width>20</width>
-                           <height>0</height>
-                          </size>
+                         <property name="topMargin">
+                          <number>3</number>
                          </property>
-                         <property name="text">
-                          <string>x</string>
+                         <property name="rightMargin">
+                          <number>3</number>
                          </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                         <property name="bottomMargin">
+                          <number>3</number>
                          </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QSpinBox" name="spinBox"/>
-                       </item>
-                      </layout>
-                     </item>
-                    </layout>
-                   </widget>
-                   <widget class="QLabel" name="label_29">
-                    <property name="geometry">
-                     <rect>
-                      <x>161</x>
-                      <y>32</y>
-                      <width>60</width>
-                      <height>16</height>
-                     </rect>
-                    </property>
-                    <property name="text">
-                     <string>Project hierarchy</string>
-                    </property>
-                   </widget>
-                   <widget class="QLabel" name="lableInfoSteps_2">
-                    <property name="geometry">
-                     <rect>
-                      <x>10</x>
-                      <y>10</y>
-                      <width>233</width>
-                      <height>16</height>
-                     </rect>
-                    </property>
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="text">
-                     <string>Information about this step --&gt;Grrid calibration</string>
-                    </property>
-                   </widget>
-                   <widget class="QLabel" name="inputImg_2">
-                    <property name="geometry">
-                     <rect>
-                      <x>10</x>
-                      <y>31</y>
-                      <width>100</width>
-                      <height>16</height>
-                     </rect>
-                    </property>
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="text">
-                     <string>Input image source</string>
-                    </property>
-                   </widget>
-                   <widget class="QLabel" name="inputImg_4">
-                    <property name="geometry">
-                     <rect>
-                      <x>10</x>
-                      <y>197</y>
-                      <width>69</width>
-                      <height>16</height>
-                     </rect>
-                    </property>
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="text">
-                     <string>Saved image</string>
-                    </property>
-                   </widget>
-                   <widget class="QFrame" name="frame_3">
-                    <property name="geometry">
-                     <rect>
-                      <x>10</x>
-                      <y>363</y>
-                      <width>224</width>
-                      <height>27</height>
-                     </rect>
-                    </property>
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::Box</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_9">
-                     <property name="topMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                     <item>
-                      <spacer name="horizontalSpacer_11">
-                       <property name="orientation">
-                        <enum>Qt::Horizontal</enum>
-                       </property>
-                       <property name="sizeHint" stdset="0">
-                        <size>
-                         <width>40</width>
-                         <height>20</height>
-                        </size>
-                       </property>
-                      </spacer>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="btnBackCamSeq">
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="layoutDirection">
-                        <enum>Qt::LeftToRight</enum>
-                       </property>
-                       <property name="text">
-                        <string>Back</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="btnNextCamSeq_2">
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="layoutDirection">
-                        <enum>Qt::LeftToRight</enum>
-                       </property>
-                       <property name="text">
-                        <string>Next</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                   <widget class="QPushButton" name="btnStopImg_2">
-                    <property name="geometry">
-                     <rect>
-                      <x>277</x>
-                      <y>275</y>
-                      <width>75</width>
-                      <height>23</height>
-                     </rect>
-                    </property>
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string>Stop</string>
-                    </property>
-                   </widget>
-                   <widget class="QPushButton" name="btnLiveImg_2">
-                    <property name="geometry">
-                     <rect>
-                      <x>161</x>
-                      <y>275</y>
-                      <width>75</width>
-                      <height>23</height>
-                     </rect>
-                    </property>
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string>Live</string>
-                    </property>
-                   </widget>
-                   <widget class="QPushButton" name="btnSaveImg">
-                    <property name="geometry">
-                     <rect>
-                      <x>161</x>
-                      <y>304</y>
-                      <width>75</width>
-                      <height>23</height>
-                     </rect>
-                    </property>
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string>Save picture</string>
-                    </property>
-                   </widget>
-                   <widget class="QTreeView" name="treeViewClibDir">
-                    <property name="geometry">
-                     <rect>
-                      <x>161</x>
-                      <y>77</y>
-                      <width>256</width>
-                      <height>192</height>
-                     </rect>
-                    </property>
-                   </widget>
-                   <widget class="QPushButton" name="btnVoiceCmd">
-                    <property name="geometry">
-                     <rect>
-                      <x>161</x>
-                      <y>333</y>
-                      <width>81</width>
-                      <height>23</height>
-                     </rect>
-                    </property>
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="text">
-                     <string>Voice command</string>
-                    </property>
-                   </widget>
+                         <item>
+                          <layout class="QHBoxLayout" name="horizontalLayout_5">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <widget class="QLabel" name="label_58">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="minimumSize">
+                              <size>
+                               <width>41</width>
+                               <height>0</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>Rows</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QSpinBox" name="spinBox_2"/>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="label_56">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="minimumSize">
+                              <size>
+                               <width>20</width>
+                               <height>0</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>x</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QSpinBox" name="spinBox"/>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="label_59">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="minimumSize">
+                              <size>
+                               <width>52</width>
+                               <height>0</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>Columns</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                        </layout>
+                       </widget>
+                      </item>
+                      <item row="7" column="1" colspan="2">
+                       <widget class="QLabel" name="label_57">
+                        <property name="text">
+                         <string>What kind of pattern we are looking for:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="4" column="2">
+                       <widget class="QPushButton" name="btnStopImg_2">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>Stop</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="6" column="1">
+                       <widget class="QPushButton" name="btnVoiceCmd">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>Voice command</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="5" column="1">
+                       <widget class="QPushButton" name="btnSaveImg">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="text">
+                         <string>Save picture</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="0">
+                       <widget class="QLabel" name="inputImg_2">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="text">
+                         <string>Input image source</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="9" column="0" colspan="3">
+                       <widget class="QFrame" name="frame_3">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::Box</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_9">
+                         <property name="topMargin">
+                          <number>0</number>
+                         </property>
+                         <property name="bottomMargin">
+                          <number>0</number>
+                         </property>
+                         <item>
+                          <spacer name="horizontalSpacer_11">
+                           <property name="orientation">
+                            <enum>Qt::Horizontal</enum>
+                           </property>
+                           <property name="sizeHint" stdset="0">
+                            <size>
+                             <width>40</width>
+                             <height>20</height>
+                            </size>
+                           </property>
+                          </spacer>
+                         </item>
+                         <item>
+                          <widget class="QPushButton" name="btnBackCamSeq">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="layoutDirection">
+                            <enum>Qt::LeftToRight</enum>
+                           </property>
+                           <property name="text">
+                            <string>Back</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QPushButton" name="btnNextCamSeq_2">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="layoutDirection">
+                            <enum>Qt::LeftToRight</enum>
+                           </property>
+                           <property name="text">
+                            <string>Next</string>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
                   </widget>
                   <widget class="QWidget" name="resultUpdate">
                    <layout class="QGridLayout" name="gridLayout_13">
