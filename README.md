@@ -3,6 +3,7 @@ UR5 CB2 series <--> camera
 **OpenCV** does not have an API for enumerating capture devices. The sample shows how to create a Python extension to invoke DirectShow C++ APIs for enumerating capture devices and corresponding resolutions.
 
 ## Dependencies   
+---
 * Python 3.10.4
 * pyqt5==5.15.9
 * pandas==1.5.0
@@ -10,8 +11,10 @@ UR5 CB2 series <--> camera
 * numy
 * json
 * glob
+## Examples
+---
 
-![camera list in Python](https://raw.githubusercontent.com/yushulx/python-capture-device-list/master/screenshot/python-list-device.PNG)
+![camera list in Python](https://github.com/NavierMillennium/UR_Application/blob/master/screenshots/calib_path.png?raw=true)
 
 ## Links
 * [OpenCV-Python Tutorials][1]
