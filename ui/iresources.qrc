@@ -1,0 +1,22 @@
+<RCC>
+  <qresource prefix="dynamic_icons">
+    <file>resources/help-content.png</file>
+    <file>resources/iconAccept.png</file>
+    <file>resources/iconCalib.png</file>
+    <file>resources/iconCamera.png</file>
+    <file>resources/iconCamera_big.png</file>
+    <file>resources/iconConnected.png</file>
+    <file>resources/iconCorrect.png</file>
+    <file>resources/iconDashedLine.png</file>
+    <file>resources/iconDashedYellowLine.png</file>
+    <file>resources/iconDisconnected.png</file>
+    <file>resources/iconGreenArrow.png</file>
+    <file>resources/iconWorkstation.png</file>
+    <file>resources/img.qrc</file>
+    <file>resources/img_rc.py</file>
+    <file>resources/laptop-1928.svg</file>
+    <file>resources/notCorrect.png</file>
+    <file>resources/translational-arrows.png</file>
+    <file>resources/UR5.png</file>
+  </qresource>
+</RCC>

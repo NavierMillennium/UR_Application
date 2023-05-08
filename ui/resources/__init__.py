@@ -1,0 +1,1 @@
+import resources.img_rc
