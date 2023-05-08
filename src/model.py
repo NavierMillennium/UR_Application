@@ -11,6 +11,7 @@ class Camera():
         # Parameters for cornerSubPix() 
         self.MAX_COUNT = 30
         self.EPSILON = 0.001 
+        self.image_index = 0
         self._imgSrc = imgSrc
         self.last_frame = np.zeros((1,1))
         self.data = {}
@@ -71,18 +72,14 @@ class Camera():
                     new_image[y,x,c] = np.clip(alpha*image[y,x,c] + beta, 0, 255)
         self.last_frame = new_image
         
-    def create_folder(self,project_path):
+    def _create_folder(self,project_path):
         """Prepare folder for calibration images"""
         try:  
             if not os.path.exists('camCorr_img'):
                 os.makedirs('camCorr_img')
-            else:
-                return 1
-        # catch exception
+        # Catch exception
         except OSError:
-            return -1
-        else:
-            return 0
+            raise ('Error! Cannot create folder')
     def init_congif_file(self):
         """Initialisation configuration 'json.' file """
         self.data = {
@@ -104,11 +101,23 @@ class Camera():
         with open('config.json','w') as config_file:
             json.dump(self.data, config_file, sort_keys=True, indent=4)
 
-    def config_file_exist(self,project_path):
-        if not os.path.exists('camCorr_img') or os.path.isfile('config.json'):
-            return -1
+    def config_files_exist(self,project_path):
+        if not os.path.exists('camCorr_img') or not os.path.isfile('config.json'):
+            raise ('One of config files exist!')
+    def image_save(self, img:np.ndarray, dim:int):
+        """Save image with calibration table"""
+        self._create_folder()
+        gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)  
+        # Checking calibration images before saving
+        ret, _ = cv.findChessboardCorners(gray, dim, None) 
+
+        if ret:  
+            self.image_index+=1 
+            path = './camCorr_img/pict' + str(self.image_index) + '.png'
+            cv.imwrite(path, img)         
         else:
-            return 0
+            raise ('Chessboard corners not found ') 
+            
     @property
     def criteria_SubPix(self):
         return [self.MAX_COUNT, self.EPSILON]

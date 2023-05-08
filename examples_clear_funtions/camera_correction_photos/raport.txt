@@ -1,0 +1,265 @@
+
+
+file: pict1.png,
+rotation vector:
+[[-0.1104527 ]
+ [ 0.01724877]
+ [-1.57998103]],
+translation vector:
+[[-3.00511756]
+ [ 0.97070112]
+ [18.58397124]],
+reprojection error: 0.013208672907530057
+
+file: pict10.png,
+rotation vector:
+[[-0.11646552]
+ [ 0.02749952]
+ [-1.49061234]],
+translation vector:
+[[ 4.49198041]
+ [ 4.62151912]
+ [17.74271314]],
+reprojection error: 0.011043932759711286
+
+file: pict11.png,
+rotation vector:
+[[-0.11431134]
+ [ 0.02875292]
+ [-1.56233162]],
+translation vector:
+[[ 5.17615878]
+ [ 0.06140193]
+ [17.98130442]],
+reprojection error: 0.013783986157656209
+
+file: pict12.png,
+rotation vector:
+[[-0.40567853]
+ [ 0.30234449]
+ [-1.47434391]],
+translation vector:
+[[ 3.85399747]
+ [ 0.06398783]
+ [17.49354564]],
+reprojection error: 0.013669289317137987
+
+file: pict13.png,
+rotation vector:
+[[-0.39744814]
+ [ 0.29855767]
+ [-1.53532655]],
+translation vector:
+[[ 3.15272268]
+ [ 4.19597527]
+ [17.30583003]],
+reprojection error: 0.01273045347413175
+
+file: pict14.png,
+rotation vector:
+[[-0.36644558]
+ [ 0.25578728]
+ [-1.53216782]],
+translation vector:
+[[-12.3735325 ]
+ [  4.42173975]
+ [ 18.383344  ]],
+reprojection error: 0.45243387613296465
+
+file: pict15.png,
+rotation vector:
+[[-0.36449669]
+ [ 0.26466081]
+ [-1.55512833]],
+translation vector:
+[[-10.78879483]
+ [  1.25662226]
+ [ 18.47552721]],
+reprojection error: 0.24223079916122264
+
+file: pict16.png,
+rotation vector:
+[[-0.35431599]
+ [ 0.25872622]
+ [-1.58727143]],
+translation vector:
+[[-10.45337977]
+ [  4.58697536]
+ [ 18.31025308]],
+reprojection error: 0.08724002898280081
+
+file: pict17.png,
+rotation vector:
+[[ 0.18815303]
+ [ 0.29716478]
+ [-1.62576755]],
+translation vector:
+[[-0.92730309]
+ [ 0.31325986]
+ [17.88399116]],
+reprojection error: 0.012541045749761753
+
+file: pict18.png,
+rotation vector:
+[[ 0.22108933]
+ [ 0.34671437]
+ [-1.57129856]],
+translation vector:
+[[-0.80416118]
+ [ 4.28991952]
+ [17.55028109]],
+reprojection error: 0.013068377048912472
+
+file: pict19.png,
+rotation vector:
+[[ 0.2570101 ]
+ [ 0.35987165]
+ [-1.65990937]],
+translation vector:
+[[ 4.56222584]
+ [ 1.25280672]
+ [17.25480496]],
+reprojection error: 0.016481608236024802
+
+file: pict2.png,
+rotation vector:
+[[-0.11275747]
+ [ 0.02762536]
+ [-1.56577262]],
+translation vector:
+[[ 4.54885842]
+ [ 0.56308912]
+ [18.00640145]],
+reprojection error: 0.011814129445611651
+
+file: pict20.png,
+rotation vector:
+[[ 0.20431902]
+ [ 0.33578505]
+ [-1.60005723]],
+translation vector:
+[[ 4.22320984]
+ [ 4.92619678]
+ [17.11326142]],
+reprojection error: 0.011445924981877792
+
+file: pict21.png,
+rotation vector:
+[[ 0.21030668]
+ [ 0.34791248]
+ [-1.46559433]],
+translation vector:
+[[-10.80586756]
+ [  4.05776471]
+ [ 18.27564165]],
+reprojection error: 0.009760997402350858
+
+file: pict22.png,
+rotation vector:
+[[ 0.28084249]
+ [ 0.41002347]
+ [-1.51421726]],
+translation vector:
+[[-10.04487124]
+ [  0.42468394]
+ [ 18.34898762]],
+reprojection error: 0.013415802801889355
+
+file: pict23.png,
+rotation vector:
+[[-0.28414963]
+ [ 0.35508164]
+ [ 1.51958354]],
+translation vector:
+[[11.34493458]
+ [-2.56929454]
+ [17.24082162]],
+reprojection error: 0.011531868173524862
+
+file: pict24.png,
+rotation vector:
+[[-0.31438023]
+ [ 0.35805179]
+ [ 1.5576332 ]],
+translation vector:
+[[ 2.93441041]
+ [-1.5692678 ]
+ [17.51575959]],
+reprojection error: 0.01265043507878012
+
+file: pict3.png,
+rotation vector:
+[[-0.11581606]
+ [ 0.02718655]
+ [-1.51034683]],
+translation vector:
+[[ 4.7668751 ]
+ [ 4.12842038]
+ [17.75161687]],
+reprojection error: 0.01195323021654766
+
+file: pict4.png,
+rotation vector:
+[[-0.10422501]
+ [-0.00587259]
+ [-1.63984068]],
+translation vector:
+[[-11.43067624]
+ [  5.75425169]
+ [ 18.85821569]],
+reprojection error: 0.010407577707373805
+
+file: pict5.png,
+rotation vector:
+[[-0.09529571]
+ [ 0.00854262]
+ [-1.56491676]],
+translation vector:
+[[-11.91779884]
+ [ -0.84094287]
+ [ 19.30602973]],
+reprojection error: 0.01158232958681196
+
+file: pict6.png,
+rotation vector:
+[[-0.0904632 ]
+ [-0.0030416 ]
+ [-1.62049314]],
+translation vector:
+[[-14.08670107]
+ [  0.63708286]
+ [ 19.32898361]],
+reprojection error: 0.06022521001805627
+
+file: pict7.png,
+rotation vector:
+[[-0.08098838]
+ [-0.00389593]
+ [-1.59393149]],
+translation vector:
+[[-14.12830994]
+ [ -1.41763659]
+ [ 19.44166627]],
+reprojection error: 0.11868809245740106
+
+file: pict8.png,
+rotation vector:
+[[-0.09808303]
+ [-0.0129758 ]
+ [-1.56934184]],
+translation vector:
+[[-14.08857436]
+ [  5.56068441]
+ [ 18.99806946]],
+reprojection error: 0.05097543805508318
+
+file: pict9.png,
+rotation vector:
+[[-0.10929068]
+ [ 0.01366115]
+ [-1.58295585]],
+translation vector:
+[[-3.98533951]
+ [ 5.06894243]
+ [18.40416868]],
+reprojection error: 0.014182764992885899

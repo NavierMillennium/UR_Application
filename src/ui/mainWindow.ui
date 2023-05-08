@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>936</width>
-    <height>726</height>
+    <height>748</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1721,7 +1721,7 @@ border: 1px solid #b8bcc7;</string>
             <item>
              <widget class="QStackedWidget" name="stackedWidget_2">
               <property name="currentIndex">
-               <number>0</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="initPage">
                <layout class="QGridLayout" name="gridLayout_23">
@@ -2433,22 +2433,6 @@ camera configuration</string>
                         </property>
                        </widget>
                       </item>
-                      <item row="0" column="0" colspan="2">
-                       <widget class="QLabel" name="lableInfoSteps_2">
-                        <property name="sizePolicy">
-                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                          <horstretch>0</horstretch>
-                          <verstretch>0</verstretch>
-                         </sizepolicy>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
-                        </property>
-                        <property name="text">
-                         <string>Information about this step --&gt;Grrid calibration</string>
-                        </property>
-                       </widget>
-                      </item>
                       <item row="2" column="1" colspan="2">
                        <widget class="QLabel" name="label_29">
                         <property name="text">
@@ -2462,10 +2446,22 @@ camera configuration</string>
                       <item row="4" column="0" rowspan="5">
                        <widget class="QLabel" name="inputImg_4">
                         <property name="sizePolicy">
-                         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                           <horstretch>0</horstretch>
                           <verstretch>0</verstretch>
                          </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>400</width>
+                          <height>240</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>400</width>
+                          <height>300</height>
+                         </size>
                         </property>
                         <property name="frameShape">
                          <enum>QFrame::StyledPanel</enum>
@@ -2597,6 +2593,9 @@ QSpinBox {
                         <property name="text">
                          <string>What kind of pattern we are looking for:</string>
                         </property>
+                        <property name="alignment">
+                         <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+                        </property>
                        </widget>
                       </item>
                       <item row="4" column="2">
@@ -2641,10 +2640,22 @@ QSpinBox {
                       <item row="3" column="0">
                        <widget class="QLabel" name="inputImg_2">
                         <property name="sizePolicy">
-                         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                           <horstretch>0</horstretch>
                           <verstretch>0</verstretch>
                          </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>400</width>
+                          <height>240</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>400</width>
+                          <height>240</height>
+                         </size>
                         </property>
                         <property name="frameShape">
                          <enum>QFrame::StyledPanel</enum>
@@ -2721,6 +2732,22 @@ QSpinBox {
                           </widget>
                          </item>
                         </layout>
+                       </widget>
+                      </item>
+                      <item row="0" column="0" colspan="3">
+                       <widget class="QLabel" name="lableInfoSteps_2">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="text">
+                         <string>Information about this step --&gt;Grrid calibration</string>
+                        </property>
                        </widget>
                       </item>
                      </layout>

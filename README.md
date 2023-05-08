@@ -1,6 +1,6 @@
 UR5 CB2 series <--> camera
 ===============
-**OpenCV** does not have an API for enumerating capture devices. The sample shows how to create a Python extension to invoke DirectShow C++ APIs for enumerating capture devices and corresponding resolutions.
+The application contains a communication module dedicated to UR robots (especially for CB2 serie wich is currently not supported and and does not support modern protocols offered by Universal Robots company, for example RTDE ), vision tools for camera calibration, camera calibration with the robot and subsequent cooperation between the vision system and the robot.
 
 ## Dependencies   
 * Python 3.10.4
@@ -30,6 +30,8 @@ UR5 CB2 series <--> camera
 * **New calibration process** - selecting video source
 
 ![Image catcher](https://github.com/NavierMillennium/UR_Application/blob/master/screenshots/catch_frame.png?raw=true)
+
+* **Real robot UR5 CB2**
 
 ## Links
 * [OpenCV-Python Tutorials][1]

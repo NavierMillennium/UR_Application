@@ -42,11 +42,18 @@ class Window(QMainWindow, ui.Ui_MainWindow):
         self.btnStopImg.clicked.connect(lambda:self.btnLiveImg.setEnabled(True))
         self.btnStopImg.clicked.connect(lambda:self.video_thread.stop())
         self.btnNextCamSeq.clicked.connect(lambda:self.stackedWidget.setCurrentWidget(self.gridCalib))    
+        self.btnNextCamSeq.clicked.connect(lambda:self._calib_sequence(1))
         self.listView.clicked[QModelIndex].connect(self._init_camera_connection)
         self.btnUpdateList.clicked.connect(self.update_camera_list)
-        # Signals --> USB-Camera --> gridCalib
-        self.btnNextCamSeq_2.clicked.connect(lambda:self.stackedWidget.setCurrentWidget(self.resultUpdate))    
         
+        # Signals --> USB-Camera --> gridCalib
+        self.btnStopImg_2.clicked.connect(lambda:self.btnLiveImg.setEnabled(True))
+        self.btnStopImg_2.clicked.connect(lambda:self.video_thread.stop())
+        self.btnLiveImg_2.clicked.connect(self._init_camera_connection)
+        self.btnSaveImg.clicked.connect()
+        self.btnNextCamSeq_2.clicked.connect(lambda:self.stackedWidget.setCurrentWidget(self.resultUpdate))    
+        self.btnBackCamSeq.clicked.connect(lambda:self.stackedWidget.setCurrentWidget(self.imgSrc))  
+       
         # Signals --> USB-Camera --> resultUpdate
         self.btnBackCamSeq_2.clicked.connect(lambda:self.stackedWidget.setCurrentWidget(self.gridCalib))  
            
@@ -78,10 +85,13 @@ class Window(QMainWindow, ui.Ui_MainWindow):
             self.btnStopImg.setEnabled(False)
             self.btnNextCamSeq.setEnabled(False)
             self.listView.clicked[QModelIndex].connect(lambda:self.btnNextCamSeq.setEnabled(True))
-            self.init_dynamic_icons()
-            self.iconImgSrcStep.setPixmap(QPixmap(r"ui/resources/iconGreenArrow.png"))
+            #self.init_dynamic_icons()
+            self.iconImgSrcStep.setPixmap(QPixmap(r"src/ui/resources/iconGreenArrow.png"))
             # Get camera device list 
             self.update_camera_list()
+        elif step == 1:
+            
+            pass
             
     def _init_camera_connection(self,index): 
         """Creating thread for camera object"""  
@@ -89,7 +99,6 @@ class Window(QMainWindow, ui.Ui_MainWindow):
         
         if self.video_thread_live:
             self.video_thread.stop()
-            
         self.cam = Camera(index)
         self.video_thread = VideoThread(self.cam)
         self.video_thread.finished.connect(lambda:self.video_thread_slot(False))
@@ -97,8 +106,11 @@ class Window(QMainWindow, ui.Ui_MainWindow):
         self.video_thread.started.connect(lambda:self.video_thread_slot(True))
         self.video_thread.change_pixmap_signal.connect(self.update_image)
         self.video_thread.start()
+        
         self.btnLiveImg.setEnabled(False)  
         self.btnStopImg.setEnabled(True)
+        self.btnLiveImg_2.setEnabled(False)  
+        self.btnStopImg_2.setEnabled(True)
 
     def video_thread_slot(self,state):
         self.video_thread_live = state  
@@ -130,7 +142,7 @@ class Window(QMainWindow, ui.Ui_MainWindow):
         """Updates the image_label with a new opencv image"""
         qt_img = self.convert_cv_qt(cv_img)
         self.inputImg.setPixmap(qt_img)
-        self.inputImg_5.setPixmap(qt_img)
+        self.inputImg_2.setPixmap(qt_img)
         
     
     def convert_cv_qt(self, cv_img):
