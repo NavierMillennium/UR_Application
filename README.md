@@ -33,7 +33,12 @@ In the basic interface, there is a service of consumer cameras available directl
 
 ![Image catcher](https://github.com/NavierMillennium/UR_Application/blob/master/screenshots/catch_frame.png?raw=true)
 
+<<<<<<< HEAD
 * **Real robot UR5 CB2**
+=======
+* **Real robot UR5 CB2**:
+https://user-images.githubusercontent.com/120511384/236850290-c5bf121d-2248-4c86-b6ac-8847bf14dcad.mp4
+>>>>>>> 52570e8cd69736f303f2275c5e42b1d38fff3267
 
 ## Links
 * [OpenCV-Python Tutorials][1]
