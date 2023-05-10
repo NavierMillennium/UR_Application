@@ -50,7 +50,7 @@ class Window(QMainWindow, ui.Ui_MainWindow):
         self.btnStopImg_2.clicked.connect(lambda:self.btnLiveImg.setEnabled(True))
         self.btnStopImg_2.clicked.connect(lambda:self.video_thread.stop())
         self.btnLiveImg_2.clicked.connect(self._init_camera_connection)
-        self.btnSaveImg.clicked.connect()
+        #self.btnSaveImg.clicked.connect()
         self.btnNextCamSeq_2.clicked.connect(lambda:self.stackedWidget.setCurrentWidget(self.resultUpdate))    
         self.btnBackCamSeq.clicked.connect(lambda:self.stackedWidget.setCurrentWidget(self.imgSrc))  
        

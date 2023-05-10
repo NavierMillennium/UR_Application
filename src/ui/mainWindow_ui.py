@@ -1588,4 +1588,4 @@ class Ui_MainWindow(object):
         self.menuFile.setTitle(_translate("MainWindow", "&File"))
         self.action_About.setText(_translate("MainWindow", "&About"))
         self.action_About.setShortcut(_translate("MainWindow", "Ctrl+A"))
-import iresources_rc
+

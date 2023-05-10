@@ -9,8 +9,8 @@ class Camera():
 
     def __init__(self,imgSrc):
         # Parameters for cornerSubPix() 
-        self.MAX_COUNT = 30
-        self.EPSILON = 0.001 
+        self.__MAX_COUNT = 30
+        self.__EPSILON = 0.001 
         self.image_index = 0
         self._imgSrc = imgSrc
         self.last_frame = np.zeros((1,1))
@@ -103,7 +103,7 @@ class Camera():
 
     def config_files_exist(self,project_path):
         if not os.path.exists('camCorr_img') or not os.path.isfile('config.json'):
-            raise ('One of config files exist!')
+            raise Exception('One of config files exist!')
     def image_save(self, img:np.ndarray, dim:int):
         """Save image with calibration table"""
         self._create_folder()
@@ -116,55 +116,94 @@ class Camera():
             path = './camCorr_img/pict' + str(self.image_index) + '.png'
             cv.imwrite(path, img)         
         else:
-            raise ('Chessboard corners not found ') 
-            
-    @property
-    def criteria_SubPix(self):
-        return [self.MAX_COUNT, self.EPSILON]
+            raise Exception('Chessboard corners not found ') 
     
-    def criteria_SubPix(self,MAX_COUNT:int,EPSILON:float)->None:
+    @property
+    def __MAX_COUNT(self):
+        return self.__MAX_COUNT
+    @__MAX_COUNT.setter
+    def __MAX_COUNT(self,MAX_COUNT:int):
+        try:
+            if 20 < int(MAX_COUNT) and 20 < int(MAX_COUNT):
+                self.__MAX_COUNT = MAX_COUNT
+        except ValueError:
+            raise ValueError('Enter value must be number') from None
+ 
+    @property
+    def __EPSILON(self):
+        return self.__MAX_COUNT
+    @__EPSILON.setter
+    def __EPSILON(self,EPSILON:float):
+        try:
+            if 0.0001 < int(EPSILON) and 0.1 < int(EPSILON):
+                self.__EPSILON = EPSILON
+        except ValueError:
+            raise ValueError('Enter value must be number') from None
         
-        if 20 < MAX_COUNT and 20 < MAX_COUNT:
-            self.MAX_COUNT = MAX_COUNT
-            self.EPSILON = EPSILON
-        
-         
-    def calib_camera(self):
+    def calib_camera(self,folder_path:str,dim:tuple):
        
         # Criteria for termination of the iterative process of corner refinement.
         # That is, the process of corner position refinement stops either after criteria.maxCount iterations or when the corner position moves by less than criteria.epsilon on some iteration.
-        criteria = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, self.MAX_COUNT, self.EPSILON)
+        criteria = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, self.__MAX_COUNT, self.__EPSILON)
 
-        # Macierze przechowywujące współrzędne punktów obiektu i współrzędne pikseli na obrazie
-        objpoints = [] # trójwymiarowe współrzędne obiektu
-        imgpoints = [] # dwuwymiarowe współrzędne punktu na obrazie
+        objpoints = []
+        imgpoints = [] 
 
-        images = glob.glob('camera_correction_photos/*.png')  # Utworzenie listy obiektów o rozszeżeniu .png znajdujących się w katalogu cam_correction_photos
-        # Wprowadzenie wymiarów tablicy
-        heigth = int(input("Podaj ilość narożników szachownicy w pionie na szukanej tablicy kalibracyjnej: "))
-        width = int(input("Podaj ilość narożników szachownicy w poziomie na szukanej tablicy kalibracyjnej: "))
-        dim = (heigth, width)
+        images = glob.glob(folder_path+'/*.png') 
+       
+        objp = np.zeros((dim[0]*dim[1], 3), np.float32)
+        objp[:,:2] = np.mgrid[0:dim[0], 0:dim[1]].T.reshape(-1, 2)
 
-        # Przygotowanie współrzędnych punktów na planszy kalibracyjnej
-        objp = np.zeros((heigth*width, 3), np.float32)
-        objp[:,:2] = np.mgrid[0:heigth, 0:width].T.reshape(-1, 2)
-
-        # Pętla wykonywana dla każdego zdjęcia znalezionego w powyższym katalogu (camera_correction_photos)
         for fname in images:
-            img = cv.imread(fname)  # Odczytanie obrazu
-            gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)  # Konwersja BGR na skalę szarości
-
-            ret, corners = cv.findChessboardCorners(gray, dim, None)     # Wyszukanie wzoru szachownicy na zdjęciu
+            img = cv.imread(fname) 
+            gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)  
+            ret, corners = cv.findChessboardCorners(gray, dim, None)    
 
             if ret == True:
                 objpoints.append(objp)
-                corners2 = cv.cornerSubPix(gray, corners, (11, 11), (-1, -1), criteria)     # Funkcja zwiększająca dokładność współrzędnych wykrytych narożników
+                corners2 = cv.cornerSubPix(gray, corners, (11, 11), (-1, -1), criteria)     
                 imgpoints.append(corners2)
+        ret, mtx, dist, rvecs, tvecs = cv.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
 
-        # Funkcja zwracająca parametry wewnętrzne kamery, wektor zniekształceń oraz wektory rotacji i translacji
-        ret, mtx_old, dist_old, rvecs, tvecs = cv.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
+        #Saving data from calibration process
+        mean_error = 0      
+        camConfigRaport = np.empty(shape=(0, 4))   
 
+        for rv, tv, fname, objpnt, imgpnt in zip(rvecs, tvecs, images, objpoints, imgpoints):
+            if '/' in fname:
+                fname = fname.split('/')
+                fname = fname[1]
+            if '\\' in fname:
+                fname = fname.split('\\')
+                fname = fname[1]
           
+            imgpoints2, _ = cv.projectPoints(objpnt, rv, tv, mtx, dist)
+           
+            error = cv.norm(imgpnt, imgpoints2, cv.NORM_L2)/len(imgpoints2)
+           
+            camConfigRaport = np.append(camConfigRaport, [[fname, rv, tv, error]], axis=0)
+            mean_error += error
+
+        mean_error = mean_error / len(objpoints)   
+
+        with open(folder_path+'/raport.txt', "w") as f:
+            for x in camConfigRaport:
+                s = '\n\nfile: ' + x[0] + ',\nrotation vector:\n' + str(x[1]) + ',\ntranslation vector:\n' + str(x[2]) + ',\nreprojection error: ' + str(x[3])
+                f.write(s)
+          
+                
+        with open('config.json','r') as config_file:
+            config = json.load(config_file)
+
+       
+        config['cam_calibration']['mtx'] = mtx.tolist()
+        config['cam_calibration']['dist'] = dist.tolist()
+        
+        with open('config.json', 'w') as config_file:
+            json.dump(config, config_file, sort_keys=True, indent=4)
+            
+        return mean_error
+    
 class VideoThread(QThread):
     finished = Signal()
     change_pixmap_signal = Signal(np.ndarray)

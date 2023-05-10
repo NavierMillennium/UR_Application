@@ -2,6 +2,8 @@ UR5 CB2 series <--> camera
 ===============
 The application contains a communication module dedicated to UR robots (especially for CB2 serie wich is currently not supported and and does not support modern protocols offered by Universal Robots company, for example RTDE ), vision tools for camera calibration, camera calibration with the robot and subsequent cooperation between the vision system and the robot.
 
+In the basic interface, there is a service of consumer cameras available directly from the system level. The application also includes an additional module dedicated to [Alien Vison][3] industrial cameras using the [GiGE][4] protocol(Presented application was tested with Mako 145G and Vimba SDK([VimbaPython][5])).
+
 ## Dependencies   
 * Python 3.10.4
 * pyqt5==5.15.9
@@ -31,8 +33,7 @@ The application contains a communication module dedicated to UR robots (especial
 
 ![Image catcher](https://github.com/NavierMillennium/UR_Application/blob/master/screenshots/catch_frame.png?raw=true)
 
-* **Real robot UR5 CB2**:
-https://user-images.githubusercontent.com/120511384/236848852-d4daae87-06fe-45f6-99ee-13ba99897823.mp4
+* **Real robot UR5 CB2**
 
 ## Links
 * [OpenCV-Python Tutorials][1]
@@ -41,3 +42,6 @@ https://user-images.githubusercontent.com/120511384/236848852-d4daae87-06fe-45f6
 
 [1]:https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html
 [2]:https://doc.qt.io/qtforpython-6/
+[3]:https://www.alliedvision.com/en/camera-selector/detail/mako/g-507/
+[4]:https://en.wikipedia.org/wiki/GigE_Vision
+[5]:https://github.com/alliedvision/VimbaPython
