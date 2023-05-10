@@ -40,7 +40,7 @@ https://user-images.githubusercontent.com/120511384/236850290-c5bf121d-2248-4c86
 ## Links
 * [OpenCV-Python Tutorials][1]
 * [Qt for Python][2]
-* [Allied Vision[3]
+* [Allied Vision][3]
 
 
 [1]:https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html
